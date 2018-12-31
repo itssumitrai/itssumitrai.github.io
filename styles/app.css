@@ -1,10 +1,73 @@
+
+
 .app {
-  font-size: 13px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1260px;
-  min-width: 1024px;
+    font-size: 13px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 52px;
+    width: 100%;
 }
 
-.main-content { 
+.octicon {
+    margin-right: 10px;
+    fill: white;
+    display: none;
+}
+
+.app h1 {
+    padding-top: 30px;
+}
+
+.main-content {
+}
+
+.app-footer {
+    background-color: #24292e;
+    padding: 10px 20px;
+    color: white;
+}
+
+.app-header {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    margin: auto;
+    text-align: center;
+    background-color: #24292e;
+    position: fixed;
+    top: 0;
+    padding: 10px 0;
+}
+
+.app-header .uh {
+    height: 32px;
+}
+
+.app-header .head-search {
+    font-size: 13px;
+    height: 24px;
+    padding: 4px 6px;
+    display: inline-block;
+    vertical-align: top;
+    border: 0;
+    border-radius: 2px;
+    width: 250px;
+}
+
+@media (min-width: 460px) {
+    .app-header {
+        padding-bottom: 0;
+    }
+
+    .app-header .uh {
+        height: auto;
+    }
+    .app {
+        margin-top: 95px;
+        max-width: 1260px;
+        min-width: 1024px;
+    }
+    .octicon {
+        display: inline-block;
+    }
 }
