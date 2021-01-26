@@ -1,69 +1,85 @@
 <script>
-  import {onMount} from 'svelte';
-  let count = 0;
-  onMount(() => {
-    const interval = setInterval(() => count++, 1000);
-    return () => {
-      clearInterval(interval);
-    };
-  });
+    import Nav from './Nav.svelte';
+    import Intro from './Intro.svelte';
+    import Card from './Card.svelte';
+    import cards from './cards';
 </script>
 
+<main class="app">
+    <header class="app-header">
+        <Nav/>
+        <Intro/>
+    </header>
+    <article class="card-container">
+        {#each cards as card}
+            <Card
+                title={card.title}
+                link={card.link}
+                org={card.organization}
+                period={card.period}
+                snippet={card.snippet}
+                content={card.content}
+                location={card.location}
+            />
+        {/each}
+    </article>
+    <footer>
+        Sumit Rai 2021
+    </footer>
+</main>
 <style>
-  :global(body) {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  .App {
-    text-align: center;
-  }
-  .App code {
-    background: #0002;
-    padding: 4px 8px;
-    border-radius: 4px;
-  }
-  .App p {
-    margin: 0.4rem;
-  }
-
-  .App-header {
-    background-color: #f9f6f6;
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-  }
-  .App-link {
-    color: #ff3e00;
-  }
-  .App-logo {
-    height: 36vmin;
-    pointer-events: none;
-    margin-bottom: 3rem;
-    animation: App-logo-pulse infinite 1.6s ease-in-out alternate;
-  }
-  @keyframes App-logo-pulse {
-    from {
-      transform: scale(1);
+    :global(:root) {
+        --primaryColor: #333;
+        --secondaryColor: #3c3a3a;
+        --tertiaryColor: #585858;
+        --layoutBgColor: #f8f8f8;
+        --linkColor: #2a45db;
+        --bgColor1: #fff;
+        --seperatorColor: #d3d3d3;
+        --nav-gradient: linear-gradient(#9f9d9d, #d3d3d3);
+        font-size: 16px;
     }
-    to {
-      transform: scale(1.06);
+    :global(body) {
+        margin: 0;
+        font-family: Helvetica, Arial,sans-serif;
+        font-size: 1rem;
+        background-color: var(--layoutBgColor);
     }
-  }
+    footer {
+        display: flex;
+        justify-content: flex-end;
+        padding: 1rem;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    .app {
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            'header'
+            'main'
+            'footer'
+    }
+    .app-header {
+        grid-area: header;
+    }
+    footer {
+        grid-area: footer;
+        color: var(--tertiaryColor);
+    }
+    .card-container {
+        display: grid;
+        grid-area: main;
+        padding: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-gap: 1rem;
+    }
+    @media (min-width:900px) {
+        .card-container {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }    
+    }
 </style>
-
-<div class="App">
-  <header class="App-header">
-    <img src="/logo.svg" class="App-logo" alt="logo" />
-    <p>Edit <code>src/App.svelte</code> and save to reload.</p>
-    <p>Page has been open for <code>{count}</code> seconds.</p>
-    <p>
-      <a class="App-link" href="https://svelte.dev" target="_blank" rel="noopener noreferrer">
-        Learn Svelte
-      </a>
-    </p>
-  </header>
-</div>

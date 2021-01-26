@@ -1,0 +1,22 @@
+{
+    "extends": ["eslint:recommended", "prettier"],
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": ["svelte3", "prettier"],
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2020": true
+    },
+    "overrides": [
+        {
+            "files": ["*.svelete"],
+            "processor": "svelte3/svelte3"
+        }
+    ],
+    "rules": {
+        "semi": [2, "always"]
+    }
+}
