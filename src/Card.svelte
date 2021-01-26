@@ -13,9 +13,10 @@
         expanded = !expanded;
     }
 </script>
+
 <section class="card {expanded ? 'expanded' : ''}">
     {#if !expanded && image}
-        <img src={image} alt={title}/>
+        <img src={image} alt={title} />
     {/if}
     <div>
         <h2>{title}</h2>
@@ -31,13 +32,16 @@
         {:else}
             <p>{snippet}</p>
         {/if}
-        <button class="actionBtn" on:click={handleClick}>{expanded ? 'Back' : 'Read more'}</button>
+        <button class="actionBtn" on:click={handleClick}
+            >{expanded ? 'Back' : 'Read more'}</button
+        >
     </div>
 </section>
+
 <style>
     .card {
         border-radius: 0.25rem;
-        box-shadow: 0 1px 6px 0 rgba(0,0,0,.15);
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.15);
         background-color: var(--bgColor1);
         max-width: 320px;
         display: flex;
@@ -88,7 +92,8 @@
         display: flex;
         justify-content: space-between;
     }
-    .period, .location {
+    .period,
+    .location {
         color: var(--tertiaryColor);
         font-size: 0.8rem;
     }
@@ -102,9 +107,9 @@
         font-size: 0.9rem;
         font-weight: 500;
     }
-    @media (min-width:900px) {
+    @media (min-width: 900px) {
         .card {
             max-width: 400px;
-        }    
+        }
     }
 </style>

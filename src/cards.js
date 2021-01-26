@@ -5,7 +5,8 @@ export default [
         organization: 'Verizon Media Inc.',
         location: 'Sunnyvale, CA',
         period: '2012 - Current',
-        snippet: 'Technical FE Lead on Yahoo Finance, Yahoo Money, Yahoo News and Cashay with hands-on coding & FE architecture',
+        snippet:
+            'Technical FE Lead on Yahoo Finance, Yahoo Money, Yahoo News and Cashay with hands-on coding & FE architecture',
         content: `<ul>
         <li>Technical FE Lead on Yahoo Finance, Yahoo News, Entertainment, some other handful sites which includes core functionality, application logic, operational reliability, and scalability/performance.</li>
         <li>Lead projects in web development, involving pure development, solving complex FE engineering problems, consistently look for improvements in code reusability, optimizations, performance, etc for Yahoo Finance and others.</li>
@@ -20,7 +21,8 @@ export default [
         organization: 'Verizon Media Inc.',
         location: 'Sunnyvale, CA',
         period: 'Mar 2018 - Oct 2019',
-        snippet: 'Lead web development engineering and collaborate with designers, product and backend teams to help define, build and deliver  core and critical features for Yahoo Finance web',
+        snippet:
+            'Lead web development engineering and collaborate with designers, product and backend teams to help define, build and deliver  core and critical features for Yahoo Finance web',
         content: `<ul>
             <li>Lead web development engineering and collaborate with designers, product and backend teams to help define, build and deliver  core and critical features for Yahoo Finance web</li>
             <li>Lead implementation and development efforts along with app architecture/design reviews, code reviews, testing and performance tuning with hands-on coding.</li>
@@ -61,7 +63,8 @@ export default [
         organization: 'Yahoo Software Development Pvt. Ltd.',
         location: 'Bangalore, India',
         period: 'Apr 2013 - Jan 2015',
-        snippet: 'FE at Yahoo Finance, Yahoo Autos and Yahoo Travel. Backend with Hadoop at Yahoo Shopping.',
+        snippet:
+            'FE at Yahoo Finance, Yahoo Autos and Yahoo Travel. Backend with Hadoop at Yahoo Shopping.',
         content: `<ul>
             <li>Yahoo Finance web maintenance and bug fixes to ensure smooth user experience</li>
             <li>UI Refresh for Yahoo Autos by developing new features on the web and moving to a new and modern stack.</li>

@@ -7,8 +7,8 @@
 
 <main class="app">
     <header class="app-header">
-        <Nav/>
-        <Intro/>
+        <Nav />
+        <Intro />
     </header>
     <article class="card-container">
         {#each cards as card}
@@ -23,10 +23,9 @@
             />
         {/each}
     </article>
-    <footer>
-        Sumit Rai 2021
-    </footer>
+    <footer>Sumit Rai 2021</footer>
 </main>
+
 <style>
     :global(:root) {
         --primaryColor: #333;
@@ -41,7 +40,7 @@
     }
     :global(body) {
         margin: 0;
-        font-family: Helvetica, Arial,sans-serif;
+        font-family: Helvetica, Arial, sans-serif;
         font-size: 1rem;
         background-color: var(--layoutBgColor);
     }
@@ -61,7 +60,7 @@
         grid-template-areas:
             'header'
             'main'
-            'footer'
+            'footer';
     }
     .app-header {
         grid-area: header;
@@ -77,9 +76,9 @@
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         grid-gap: 1rem;
     }
-    @media (min-width:900px) {
+    @media (min-width: 900px) {
         .card-container {
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        }    
+        }
     }
 </style>

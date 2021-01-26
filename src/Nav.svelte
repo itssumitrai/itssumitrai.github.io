@@ -5,6 +5,7 @@
         </li>
     </ul>
 </nav>
+
 <style>
     .nav {
         background-image: var(--nav-gradient);
