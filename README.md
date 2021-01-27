@@ -1,6 +1,6 @@
-# New Project
+# Sumit Rai ![CI](https://github.com/itssumitrai/itssumitrai.github.io/workflows/CI/badge.svg)
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+Personal github pages webpage for myself.
 
 ## Available Scripts
 
@@ -21,9 +21,3 @@ See the section about running tests for more information.
 
 Builds a static copy of your site to the `build/` folder.
 Your app is ready to be deployed!
-
-**For the best production performance:** Add a build bundler plugin like [@snowpack/plugin-webpack](https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-webpack) or [snowpack-plugin-rollup-bundle](https://github.com/ParamagicDev/snowpack-plugin-rollup-bundle) to your `snowpack.config.json` config file.
-
-### Q: What about Eject?
-
-No eject needed! Snowpack guarantees zero lock-in, and CSA strives for the same.
