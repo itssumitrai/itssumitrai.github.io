@@ -1,4 +1,8 @@
 {
+    "name": "itssumitrai.github.io",
+    "description": "Personal website for myself",
+    "author": "Sumit Rai",
+    "license": "MIT",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
