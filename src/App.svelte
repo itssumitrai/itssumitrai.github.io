@@ -35,7 +35,7 @@
         --linkColor: #2a45db;
         --bgColor1: #fff;
         --seperatorColor: #d3d3d3;
-        --nav-gradient: linear-gradient(#9f9d9d, #d3d3d3);
+        --nav-gradient: linear-gradient(var(--linkColor), #b09af1);
         font-size: 16px;
     }
     :global(body) {
@@ -57,21 +57,14 @@
         min-height: 100vh;
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
-        grid-template-areas:
-            'header'
-            'main'
-            'footer';
     }
     .app-header {
-        grid-area: header;
     }
     footer {
-        grid-area: footer;
         color: var(--tertiaryColor);
     }
     .card-container {
         display: grid;
-        grid-area: main;
         padding: 1rem;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         grid-gap: 1rem;

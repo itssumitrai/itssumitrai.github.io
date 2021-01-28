@@ -23,7 +23,7 @@
     }
     .nav li a {
         text-decoration: none;
-        color: var(--linkColor);
+        color: #fff;
         font-weight: 400;
     }
     .nav li a:hover {
