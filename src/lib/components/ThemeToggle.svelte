@@ -27,7 +27,7 @@
     tabindex={-1}
     on:keydown={handleKeydown}
 >
-    {#each options as opt, i}
+    {#each options as opt, i (opt.value)}
         <button
             type="button"
             role="radio"
