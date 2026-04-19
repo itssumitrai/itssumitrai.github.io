@@ -35,7 +35,9 @@ if (browser) {
     preference.subscribe((p) => {
         try {
             localStorage.setItem(STORAGE_KEY, p);
-        } catch {}
+        } catch {
+            // Ignore errors (e.g., localStorage may be unavailable or full)
+        }
     });
     resolved.subscribe((r) => {
         document.documentElement.setAttribute('data-theme', r);

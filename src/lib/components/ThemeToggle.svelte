@@ -24,6 +24,7 @@
     class="theme-toggle"
     role="radiogroup"
     aria-label="Color theme"
+    tabindex={-1}
     on:keydown={handleKeydown}
 >
     {#each options as opt, i}
