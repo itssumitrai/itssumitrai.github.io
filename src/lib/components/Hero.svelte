@@ -133,6 +133,7 @@
     }
     .btn.primary:hover {
         background: var(--primary);
+        color: var(--on-primary);
         transform: translateY(-1px);
     }
     .btn.ghost {
