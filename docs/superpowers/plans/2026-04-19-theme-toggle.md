@@ -432,6 +432,8 @@ Create `src/lib/components/ThemeToggle.svelte`:
         { value: 'dark', label: 'Dark theme' }
     ];
 
+    let buttons = [];
+
     function handleKeydown(e) {
         if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
         e.preventDefault();
@@ -439,6 +441,7 @@ Create `src/lib/components/ThemeToggle.svelte`:
         const delta = e.key === 'ArrowRight' ? 1 : -1;
         const next = (currentIndex + delta + options.length) % options.length;
         preference.set(options[next].value);
+        buttons[next]?.focus();
     }
 </script>
 
@@ -448,7 +451,7 @@ Create `src/lib/components/ThemeToggle.svelte`:
     aria-label="Color theme"
     on:keydown={handleKeydown}
 >
-    {#each options as opt}
+    {#each options as opt, i}
         <button
             type="button"
             role="radio"
@@ -456,6 +459,7 @@ Create `src/lib/components/ThemeToggle.svelte`:
             aria-label={opt.label}
             class:active={$preference === opt.value}
             tabindex={$preference === opt.value ? 0 : -1}
+            bind:this={buttons[i]}
             on:click={() => preference.set(opt.value)}
         >
             {#if opt.value === 'light'}
