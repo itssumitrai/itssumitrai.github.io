@@ -14,8 +14,8 @@
             </h1>
             <p class="bio">{site.bio}</p>
             <div class="actions">
-                <a class="btn primary" href="#work">
-                    View Work
+                <a class="btn primary" href="#experience">
+                    View Experience
                     <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"
                         ><path
                             fill="currentColor"

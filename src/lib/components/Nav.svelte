@@ -29,6 +29,16 @@
         </nav>
         <div class="nav-right">
             <ThemeToggle />
+            <!-- TODO: drop resume.pdf into static/ to enable the download -->
+            <a class="resume" href="/resume.pdf" download aria-label="Download resume">
+                <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                    <path
+                        fill="currentColor"
+                        d="M8 1a.75.75 0 0 1 .75.75v7.69l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V1.75A.75.75 0 0 1 8 1Zm-5.25 11.5a.75.75 0 0 1 .75.75V14a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-.75a.75.75 0 0 1 1.5 0V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-.75a.75.75 0 0 1 .75-.75Z"
+                    />
+                </svg>
+                <span>Resume</span>
+            </a>
             <a class="cta" href={site.social.email}>Let's talk</a>
         </div>
     </div>
@@ -91,7 +101,39 @@
     .nav-right {
         display: inline-flex;
         align-items: center;
-        gap: 14px;
+        gap: 10px;
+    }
+    .resume {
+        display: none;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 12px;
+        border-radius: var(--radius-full);
+        background: transparent;
+        color: var(--on-surface);
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid var(--outline-variant);
+        transition:
+            border-color 150ms ease,
+            color 150ms ease,
+            background 150ms ease;
+    }
+    .resume:hover {
+        border-color: var(--on-surface);
+        background: var(--surface-container-lowest);
+    }
+    .resume svg {
+        color: var(--outline);
+        transition: color 150ms ease;
+    }
+    .resume:hover svg {
+        color: var(--primary);
+    }
+    @media (min-width: 560px) {
+        .resume {
+            display: inline-flex;
+        }
     }
     .cta {
         display: inline-flex;
