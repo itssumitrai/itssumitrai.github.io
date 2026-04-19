@@ -12,17 +12,22 @@
         "lint": "eslint .",
         "test": "echo testing disabled"
     },
+    "overrides": {
+        "cookie": "^0.7.2"
+    },
     "devDependencies": {
         "@sveltejs/adapter-static": "^3.0.10",
         "@sveltejs/kit": "^2.57.1",
-        "@sveltejs/vite-plugin-svelte": "^3.1.2",
+        "@eslint/js": "^8.57.1",
+        "@sveltejs/vite-plugin-svelte": "^7.0.0",
         "eslint": "^8.57.1",
         "eslint-config-prettier": "^9.1.2",
-        "eslint-plugin-svelte": "^2.46.1",
+        "eslint-plugin-svelte": "^3.17.0",
+        "globals": "^13.24.0",
         "prettier": "^3.8.3",
         "prettier-plugin-svelte": "^3.5.1",
-        "svelte": "^4.2.20",
-        "svelte-eslint-parser": "^0.43.0",
-        "vite": "^5.4.21"
+        "svelte": "^5.55.4",
+        "svelte-eslint-parser": "^1.6.0",
+        "vite": "^8.0.8"
     }
 }

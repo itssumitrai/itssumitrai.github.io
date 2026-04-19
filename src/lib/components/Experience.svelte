@@ -11,7 +11,7 @@
         </header>
 
         <ol class="timeline">
-            {#each experience as role}
+            {#each experience as role (role.company + role.period)}
                 <li class="item" style="--accent: {role.accent}">
                     <span class="marker" aria-hidden="true"></span>
                     <article class="card">

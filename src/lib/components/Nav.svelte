@@ -22,7 +22,7 @@
         </a>
         <nav aria-label="Primary">
             <ul>
-                {#each site.nav as item}
+                {#each site.nav as item (item.href)}
                     <li><a href={item.href}>{item.label}</a></li>
                 {/each}
             </ul>
