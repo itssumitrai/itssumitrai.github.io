@@ -37,14 +37,6 @@
             <div class="photo" role="img" aria-label="Profile portrait placeholder">
                 <span class="initials">SR</span>
             </div>
-            <div class="chip chip-a">
-                <span class="chip-label">Currently</span>
-                <span class="chip-value">Building FE platform</span>
-            </div>
-            <div class="chip chip-b">
-                <span class="chip-label">Since</span>
-                <span class="chip-value">2012</span>
-            </div>
         </aside>
     </div>
     <div class="beam" aria-hidden="true"></div>
@@ -197,37 +189,6 @@
         color: var(--primary);
         letter-spacing: -0.02em;
     }
-    .chip {
-        position: absolute;
-        background: var(--surface-container-lowest);
-        border: 1px solid var(--outline-variant);
-        border-radius: 14px;
-        padding: 10px 14px;
-        box-shadow: var(--shadow-md);
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-    }
-    .chip-label {
-        font-size: 0.7rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--outline);
-    }
-    .chip-value {
-        font-size: 0.88rem;
-        color: var(--on-surface);
-        font-weight: 500;
-    }
-    .chip-a {
-        top: 8%;
-        left: -6%;
-    }
-    .chip-b {
-        bottom: 8%;
-        right: -8%;
-    }
-
     @media (min-width: 900px) {
         .grid {
             grid-template-columns: 1.15fr 1fr;

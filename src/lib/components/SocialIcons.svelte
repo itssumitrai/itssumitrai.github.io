@@ -6,7 +6,7 @@
 
 <div class="social" class:ghost={variant === 'ghost'}>
     {#if links.github}
-        <a href={links.github} title="GitHub" aria-label="GitHub" target="_blank" rel="noopener">
+        <a href={links.github} title="GitHub" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
             <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true"
                 ><path
                     fill="currentColor"
@@ -21,7 +21,7 @@
             title="LinkedIn"
             aria-label="LinkedIn"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
         >
             <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true"
                 ><path

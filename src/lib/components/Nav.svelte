@@ -4,13 +4,31 @@
     import ThemeToggle from './ThemeToggle.svelte';
 
     let scrolled = false;
+    let active = '';
     onMount(() => {
         const onScroll = () => {
             scrolled = window.scrollY > 8;
         };
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
+
+        const ids = site.nav.map((n) => n.href.slice(1));
+        const targets = ids.map((id) => document.getElementById(id)).filter(Boolean);
+        const visible = Object.create(null);
+        const observer = new IntersectionObserver(
+            (entries) => {
+                for (const e of entries) visible[e.target.id] = e.isIntersecting;
+                const next = ids.find((id) => visible[id]);
+                if (next) active = next;
+            },
+            { rootMargin: '-40% 0px -50% 0px', threshold: 0 }
+        );
+        targets.forEach((t) => observer.observe(t));
+
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+            observer.disconnect();
+        };
     });
 </script>
 
@@ -23,22 +41,31 @@
         <nav aria-label="Primary">
             <ul>
                 {#each site.nav as item (item.href)}
-                    <li><a href={item.href}>{item.label}</a></li>
+                    <li>
+                        <a
+                            href={item.href}
+                            class:active={active === item.href.slice(1)}
+                            aria-current={active === item.href.slice(1) ? 'page' : undefined}
+                        >
+                            {item.label}
+                        </a>
+                    </li>
                 {/each}
             </ul>
         </nav>
         <div class="nav-right">
             <ThemeToggle />
-            <!-- TODO: drop resume.pdf into static/ to enable the download -->
-            <a class="resume" href="/resume.pdf" download aria-label="Download resume">
-                <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-                    <path
-                        fill="currentColor"
-                        d="M8 1a.75.75 0 0 1 .75.75v7.69l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V1.75A.75.75 0 0 1 8 1Zm-5.25 11.5a.75.75 0 0 1 .75.75V14a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-.75a.75.75 0 0 1 1.5 0V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-.75a.75.75 0 0 1 .75-.75Z"
-                    />
-                </svg>
-                <span>Resume</span>
-            </a>
+            {#if site.resume}
+                <a class="resume" href={site.resume} download aria-label="Download resume">
+                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                        <path
+                            fill="currentColor"
+                            d="M8 1a.75.75 0 0 1 .75.75v7.69l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V1.75A.75.75 0 0 1 8 1Zm-5.25 11.5a.75.75 0 0 1 .75.75V14a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-.75a.75.75 0 0 1 1.5 0V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-.75a.75.75 0 0 1 .75-.75Z"
+                        />
+                    </svg>
+                    <span>Resume</span>
+                </a>
+            {/if}
             <a class="cta" href={site.social.email}>Let's talk</a>
         </div>
     </div>
@@ -90,13 +117,34 @@
         margin: 0;
     }
     nav a {
+        position: relative;
         color: var(--on-surface-variant);
         font-size: 0.92rem;
         font-weight: 500;
+        padding-bottom: 6px;
         transition: color 150ms ease;
     }
     nav a:hover {
         color: var(--on-surface);
+    }
+    nav a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        background: var(--primary);
+        border-radius: 999px;
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    nav a.active {
+        color: var(--on-surface);
+    }
+    nav a.active::after {
+        transform: scaleX(1);
     }
     .nav-right {
         display: inline-flex;

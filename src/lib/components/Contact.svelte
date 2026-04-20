@@ -1,9 +1,10 @@
 <script>
     import { site } from '$lib/data/site.js';
     import SocialIcons from './SocialIcons.svelte';
+    import { reveal } from '$lib/actions/reveal.js';
 </script>
 
-<section class="contact" id="contact">
+<section class="contact reveal" id="contact" use:reveal>
     <div class="container">
         <div class="card">
             <span class="eyebrow">Contact</span>

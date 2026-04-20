@@ -10,14 +10,7 @@ const config = {
             fallback: null,
             precompress: false,
             strict: true
-        }),
-        prerender: {
-            // TODO: remove once static/resume.pdf is added
-            handleHttpError: ({ path, message }) => {
-                if (path === '/resume.pdf') return;
-                throw new Error(message);
-            }
-        }
+        })
     }
 };
 
