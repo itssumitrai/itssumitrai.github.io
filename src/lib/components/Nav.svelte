@@ -66,7 +66,9 @@
                     <span>Resume</span>
                 </a>
             {/if}
-            <a class="cta" href={site.social.email}>Let's talk</a>
+            {#if site.social.email}
+                <a class="cta" href={site.social.email}>Let's talk</a>
+            {/if}
         </div>
     </div>
 </header>

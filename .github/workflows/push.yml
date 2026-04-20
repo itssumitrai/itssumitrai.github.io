@@ -28,6 +28,12 @@ jobs:
               run: npm ci
             - name: Build
               run: npm run build
+              env:
+                  PUBLIC_EMAIL: ${{ vars.PUBLIC_EMAIL }}
+                  PUBLIC_GITHUB_URL: ${{ vars.PUBLIC_GITHUB_URL }}
+                  PUBLIC_LINKEDIN_URL: ${{ vars.PUBLIC_LINKEDIN_URL }}
+                  PUBLIC_PROFILE_PICTURE_URL: ${{ vars.PUBLIC_PROFILE_PICTURE_URL }}
+                  PUBLIC_RESUME_URL: ${{ vars.PUBLIC_RESUME_URL }}
             - name: Setup Pages
               uses: actions/configure-pages@v5
             - name: Upload artifact
