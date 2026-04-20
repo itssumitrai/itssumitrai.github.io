@@ -88,12 +88,6 @@
         border-radius: var(--radius-lg);
         padding: 20px 22px;
         box-shadow: var(--shadow-sm);
-        transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
-    }
-    .card:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-md);
-        border-color: var(--outline-variant);
     }
     .row {
         display: flex;

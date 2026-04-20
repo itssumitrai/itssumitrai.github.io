@@ -78,12 +78,6 @@
         border: 1px solid var(--outline-variant);
         font-size: 0.88rem;
         color: var(--on-surface);
-        transition: all 150ms ease;
-    }
-    .pills li:hover {
-        border-color: var(--primary);
-        color: var(--primary);
-        background: var(--surface-container-high);
     }
     @media (min-width: 820px) {
         .groups {
