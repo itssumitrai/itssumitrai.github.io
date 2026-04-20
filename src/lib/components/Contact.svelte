@@ -14,7 +14,9 @@
                 product you're trying to ship well.
             </p>
             <div class="actions">
-                <a class="btn primary" href={site.social.email}>Say hello</a>
+                {#if site.social.email}
+                    <a class="btn primary" href={site.social.email}>Say hello</a>
+                {/if}
                 <SocialIcons links={site.social} variant="ghost" />
             </div>
         </div>

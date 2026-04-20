@@ -23,7 +23,9 @@
                         /></svg
                     >
                 </a>
-                <a class="btn ghost" href={site.social.email}>Get in Touch</a>
+                {#if site.social.email}
+                    <a class="btn ghost" href={site.social.email}>Get in Touch</a>
+                {/if}
             </div>
             <div class="meta">
                 <SocialIcons links={site.social} />
@@ -34,9 +36,19 @@
             </div>
         </div>
         <aside class="portrait">
-            <div class="photo" role="img" aria-label="Profile portrait placeholder">
-                <span class="initials">SR</span>
-            </div>
+            {#if site.profilePicture}
+                <img
+                    class="photo"
+                    src={site.profilePicture}
+                    alt="{site.name} — profile portrait"
+                    loading="eager"
+                    decoding="async"
+                />
+            {:else}
+                <div class="photo" role="img" aria-label="Profile portrait placeholder">
+                    <span class="initials">SR</span>
+                </div>
+            {/if}
         </aside>
     </div>
     <div class="beam" aria-hidden="true"></div>
@@ -184,6 +196,11 @@
         display: grid;
         place-items: center;
         overflow: hidden;
+    }
+    img.photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     .initials {
         font-family: var(--font-display);
