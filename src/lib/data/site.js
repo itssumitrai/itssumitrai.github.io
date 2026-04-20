@@ -4,6 +4,7 @@ export const site = {
     tagline: 'Building scalable web experiences at global scale.',
     bio: 'I lead frontend architecture and engineering for large-audience web products. I care about craft, performance, and teams that ship with clarity.',
     location: 'Sunnyvale, CA',
+    resume: null,
     social: {
         github: 'https://github.com/itssumitrai',
         linkedin: 'https://www.linkedin.com/in/sumitrai1987/',

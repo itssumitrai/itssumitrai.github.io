@@ -1,8 +1,9 @@
 <script>
     import { experience } from '$lib/data/experience.js';
+    import { reveal } from '$lib/actions/reveal.js';
 </script>
 
-<section class="experience" id="experience">
+<section class="experience reveal" id="experience" use:reveal>
     <div class="container">
         <header class="section-head">
             <span class="eyebrow">Experience</span>
