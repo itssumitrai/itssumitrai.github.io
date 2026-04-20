@@ -136,7 +136,8 @@
         border-color: var(--outline-variant);
     }
     .btn.ghost:hover {
-        border-color: var(--on-surface);
+        color: var(--primary);
+        border-color: var(--primary);
         background: var(--surface-container-lowest);
     }
     .meta {
