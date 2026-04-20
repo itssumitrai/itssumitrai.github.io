@@ -80,9 +80,11 @@
         margin: 4px 0 0;
     }
     .line.accent {
-        color: var(--on-surface);
+        color: var(--on-surface-variant);
         font-style: italic;
         font-weight: 500;
+        font-size: 0.6em;
+        margin-top: 4px;
     }
     .line.muted {
         color: var(--on-surface-variant);

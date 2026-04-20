@@ -1,6 +1,6 @@
 export const site = {
     name: 'Sumit Rai',
-    role: 'Principal Software Engineer',
+    role: 'Sr Principal Software Engineer at Yahoo',
     tagline: 'Building scalable web experiences at global scale.',
     bio: 'I lead frontend architecture and engineering for large-audience web products. I care about craft, performance, and teams that ship with clarity.',
     location: 'Sunnyvale, CA',
