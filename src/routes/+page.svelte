@@ -3,6 +3,7 @@
     import Nav from '$lib/components/Nav.svelte';
     import Hero from '$lib/components/Hero.svelte';
     import Experience from '$lib/components/Experience.svelte';
+    import Skills from '$lib/components/Skills.svelte';
     import Contact from '$lib/components/Contact.svelte';
     import Footer from '$lib/components/Footer.svelte';
 </script>
@@ -17,6 +18,7 @@
 <main>
     <Hero />
     <Experience />
+    <Skills />
     <Contact />
 </main>
 <Footer />
